@@ -11,10 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.gauravk.audiovisualizer.visualizer.BarVisualizer;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    //BarVisualizer visualizer= findViewById(R.id.bar);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,14 @@ public class MainActivity extends AppCompatActivity {
         Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int id= mediaPlayer.getAudioSessionId();
+                if (id != -1) {
+                   // visualizer.setAudioSessionId(id);
+                }
+
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
                     @Override
                     public void onCompletion(MediaPlayer mp) {
                         Toast.makeText(MainActivity.this, "The Song is Over", Toast.LENGTH_SHORT).show();
@@ -43,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.pause();
+               // visualizer.release();
             }
         });
 
@@ -53,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
     }
