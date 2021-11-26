@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-testtssss
-=======
-<<<<<<< HEAD
-test
-=======
-testtsss
->>>>>>> 12e2e909316d5458abada1091a91644a8c72f2ed
->>>>>>> c28697f8685d5b17b4acdd32f48b3879a6384520
+s
