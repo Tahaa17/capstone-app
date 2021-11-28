@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer =MediaPlayer.create(this, R.raw.song);
         Button Play = (Button) findViewById(R.id.Play);
 
+        //On click listener to control playing of music
         Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
