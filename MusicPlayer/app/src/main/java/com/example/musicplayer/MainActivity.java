@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import android.util.Log;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.concurrent.TimeUnit;
+
+public class MainActivity extends AppCompatActivity implements Runnable{
 
     private MediaPlayer mediaPlayer;
 
@@ -24,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.w(LOG_TAG, "Vehicle.brake.press()");
+        MainActivity obj = new MainActivity();
+        Thread thread = new Thread(obj);
+        thread.start();
+
 
         mediaPlayer =MediaPlayer.create(this, R.raw.song);
         Button Play = (Button) findViewById(R.id.Play);
@@ -52,12 +57,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
-
                 mediaPlayer.pause();
-
             }
         });
 
+
+    }
+
+    @Override
+    public void run() {
+
+        while(true){
+            Log.w(LOG_TAG, "Vehicle.brake.press()");
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
