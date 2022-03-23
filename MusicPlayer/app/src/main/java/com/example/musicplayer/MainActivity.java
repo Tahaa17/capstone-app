@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         while(true){
             Log.w(LOG_TAG, "Vehicle.brake.press()");
             try {
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
