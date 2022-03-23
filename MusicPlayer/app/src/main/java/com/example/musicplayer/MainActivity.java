@@ -11,31 +11,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.gauravk.audiovisualizer.visualizer.BarVisualizer;
-
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-    //BarVisualizer visualizer= findViewById(R.id.bar);
+
+    public static final String LOG_TAG = "logger";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.w(LOG_TAG, "Vehicle.brake.press()");
+
         mediaPlayer =MediaPlayer.create(this, R.raw.song);
         Button Play = (Button) findViewById(R.id.Play);
-        //On click listener to control the music
+
         Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id= mediaPlayer.getAudioSessionId();
-                if (id != -1) {
-                   // visualizer.setAudioSessionId(id);
-                }
 
                 mediaPlayer.start();
+
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
                     @Override
@@ -49,22 +48,15 @@ public class MainActivity extends AppCompatActivity {
         Button Pause = (Button) findViewById(R.id.Pause);
 
         Pause.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
             public void onClick(View v) {
+
                 mediaPlayer.pause();
-               // visualizer.release();
-            }
-        });
-
-        Button Selectsong = (Button) findViewById(R.id.Select_song);
-        Selectsong.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
             }
         });
-
-
 
 
     }
