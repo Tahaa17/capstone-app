@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
             }
         });
 
-//hi
+//Good version of app
     }
 
     @Override
