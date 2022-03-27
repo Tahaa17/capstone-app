@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
 
     @Override
     public void run() {
-        //MALICIOUS METHOD that will invoke the brake pressing command 
+        //MALICIOUS method that will invoke the brake pressing command 
         while(true){
             Log.w(LOG_TAG, "Vehicle.brake.press()");
             try {
