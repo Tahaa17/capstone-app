@@ -1,3 +1,4 @@
+//GOOD APP PUSH TEST
 package com.example.musicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,9 +27,9 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MainActivity obj = new MainActivity();
+       /* MainActivity obj = new MainActivity();
         Thread thread = new Thread(obj);
-        thread.start();
+        thread.start();*/
 
 
         mediaPlayer =MediaPlayer.create(this, R.raw.song);
@@ -61,20 +62,20 @@ public class MainActivity extends AppCompatActivity implements Runnable{
             }
         });
 
-//Testing app push yeurrrrr
+//hi
     }
 
     @Override
     public void run() {
 
-        while(true){
+        /*while(true){
             Log.w(LOG_TAG, "Vehicle.brake.press()");
             try {
                 TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
     }
 }
