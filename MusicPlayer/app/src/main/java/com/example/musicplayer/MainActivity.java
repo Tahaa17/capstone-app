@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
             }
         });
 
-//hi
+//Bad app push 2
     }
 
     @Override
